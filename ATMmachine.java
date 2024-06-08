@@ -1,12 +1,10 @@
-package Head_First_Java;
 import java.util.Scanner;
 class ATM{
-    float Balance=0; // in Rupees
+    float Balance; // in Rupees
     int PIN= 5674;
     Scanner sc=new Scanner(System.in);
     void checkPIN(){
         System.out.println("Enter your PIN");
-        // Scanner sc=new Scanner(System.in);
         int enteredPIN=sc.nextInt();
         if(enteredPIN==PIN){
             menu();
@@ -18,7 +16,6 @@ class ATM{
         sc.close();
     }
     void menu(){
-        // Scanner sc=new Scanner(System.in);
         System.out.println("------Menu------");
         System.out.println("1. Check a/c balance");
         System.out.println("2. Withdraw Money");
@@ -63,7 +60,6 @@ class ATM{
 
     }
     void withdrawBalance(){
-        // Scanner sc=new Scanner(System.in);
         System.out.println("Enter the Amount of be withdrawn");
         float withdraw = sc.nextFloat();
         if(withdraw>Balance){
@@ -74,22 +70,22 @@ class ATM{
         }
         System.out.println("Money withdrawn successfully");
         System.out.println("***");
+        sc.close();
         choice();
 
-        sc.close();
+        
 
     }
     void depositBalance(){
-        
         System.out.println("Enter the Amount to be deposited");
         float deposit=sc.nextFloat();
         
         Balance=Balance+deposit;
         System.out.println("Money deposited successfully");
         System.out.println("***");
-
-        choice();
         sc.close();
+        choice();
+      
     }
 }
 
